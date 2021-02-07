@@ -15,8 +15,7 @@ import javax.persistence.*;
 public class Task {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "incrementDomain")
-    @GenericGenerator(name = "incrementDomain", strategy = "increment")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Integer id;
 
