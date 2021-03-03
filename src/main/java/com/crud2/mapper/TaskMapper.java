@@ -13,19 +13,21 @@ public class TaskMapper {
         return new Task(
                 taskDto.getId(),
                 taskDto.getTitle(),
-                taskDto.getContent());
+                taskDto.getContent(),
+                taskDto.getTest());
     }
 
     public TaskDto mapToTaskDto(final Task task) {
         return new TaskDto(
                 task.getId(),
                 task.getTitle(),
-                task.getContent());
+                task.getContent(),
+                task.getTest());
     }
 
     public List<TaskDto> mapTaskDtoList(final List<Task> taskList) {
         return taskList.stream()
-                .map(t -> new TaskDto(t.getId(), t.getTitle(), t.getContent()))
+                .map(t -> new TaskDto(t.getId(), t.getTitle(), t.getContent(), t.getTest()))
                 .collect(Collectors.toList());
     }
 }
